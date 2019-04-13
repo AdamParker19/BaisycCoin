@@ -19,14 +19,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "GanjaCoin"
-            VALUE "FileDescription",    "GanjaCoin (OSS GUI client for MRJA)"
+            VALUE "CompanyName",        "Baisyc GmBH"
+            VALUE "FileDescription",    "BaisycCoin (OSS GUI client for MRJA)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "ganjacoin-qt"
+            VALUE "InternalName",       "baisyccoin-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "ganjacoin-qt.exe"
-            VALUE "ProductName",        "GanjaCoin"
+            VALUE "OriginalFilename",   "baisyccoin-qt.exe"
+            VALUE "ProductName",        "BaisycCoin"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END
