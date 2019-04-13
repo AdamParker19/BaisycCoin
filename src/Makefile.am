@@ -66,15 +66,15 @@ bin_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += ganjacoind
+  bin_PROGRAMS += baisyccoind
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += ganjacoin-cli ganjacoin-tx
+  bin_PROGRAMS += baisyccoin-cli ganjacoin-tx
 endif
 
 .PHONY: FORCE
-# ganjacoin core #
+# baisyccoin core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
@@ -426,7 +426,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-ganjacoind_LDADD = \
+baisyccoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UNIVALUE) \
@@ -438,26 +438,26 @@ ganjacoind_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-ganjacoind_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+baisyccoind_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-ganjacoind_LDADD += libbitcoin_wallet.a
+baisyccoind_LDADD += libbitcoin_wallet.a
 endif
-ganjacoind_SOURCES = ganjacoind.cpp
+baisyccoind_SOURCES = baisyccoind.cpp
 #
 
 if TARGET_WINDOWS
-ganjacoind_SOURCES += ganjacoind-res.rc
+baisyccoind_SOURCES += baisyccoind-res.rc
 endif
 
-ganjacoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-ganjacoind_CPPFLAGS = $(BITCOIN_INCLUDES)
-ganjacoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+baisyccoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+baisyccoind_CPPFLAGS = $(BITCOIN_INCLUDES)
+baisyccoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 
 # ganjacoin-cli binary #
-ganjacoin_cli_LDADD = \
+baisyccoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_UTIL) \
   $(BOOST_LIBS) \
@@ -465,14 +465,14 @@ ganjacoin_cli_LDADD = \
   $(CRYPTO_LIBS) \
   $(EVENT_LIBS)
 
-ganjacoin_cli_SOURCES = \
-  ganjacoin-cli.cpp
+baisyccoin_cli_SOURCES = \
+  baisyccoin-cli.cpp
 
-ganjacoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+baisyccoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 #
 
-# ganjacoin-tx binary #
-ganjacoin_tx_LDADD = \
+# baisyccoin-tx binary #
+baisyccoin_tx_LDADD = \
   $(LIBBITCOIN_UNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -482,15 +482,15 @@ ganjacoin_tx_LDADD = \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
-ganjacoin_tx_SOURCES = ganjacoin-tx.cpp
-ganjacoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+baiysccoin_tx_SOURCES = ganjacoin-tx.cpp
+baisyccoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-ganjacoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+baisycoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ganjacoin_cli_SOURCES += ganjacoin-cli-res.rc
+baisyccoin_cli_SOURCES += baisyccoin-cli-res.rc
 endif
-ganjacoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+baisyccoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h
