@@ -6,7 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/ganjacoin-config.h"
+#include "config/baisyccoin-config.h"
 #endif
 
 #include "net.h"
@@ -1202,7 +1202,7 @@ void ThreadOpenConnections()
             static bool done = false;
             if (!done) {
                 LogPrintf("Adding fixed seed nodes as DNS doesn't seem to be available.\n");
-                addrman.Add(Params().FixedSeeds(), CNetAddr("127.0.0.1"));
+                addrman.Add(Params().FixedSeeds("192.168.42.221","192.168.42.222"), CNetAddr("127.0.0.1"));
                 done = true;
             }
         }
