@@ -100,15 +100,15 @@ host_triplet = @host@
 bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5)
 TESTS = $(am__EXEEXT_6) $(am__EXEEXT_5)
-@BUILD_BITCOIND_TRUE@am__append_7 = ganjacoind
-@BUILD_BITCOIN_UTILS_TRUE@am__append_8 = ganjacoin-cli ganjacoin-tx
+@BUILD_BITCOIND_TRUE@am__append_7 = baisyccoind
+@BUILD_BITCOIN_UTILS_TRUE@am__append_8 = baisyccoin-cli baisyccoin-tx
 @GLIBC_BACK_COMPAT_TRUE@am__append_9 = compat/glibc_compat.cpp \
 @GLIBC_BACK_COMPAT_TRUE@	compat/glibcxx_compat.cpp
 @ENABLE_ZMQ_TRUE@am__append_10 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 @ENABLE_WALLET_TRUE@am__append_11 = libbitcoin_wallet.a
 #
-@TARGET_WINDOWS_TRUE@am__append_12 = ganjacoind-res.rc
-@TARGET_WINDOWS_TRUE@am__append_13 = ganjacoin-cli-res.rc
+@TARGET_WINDOWS_TRUE@am__append_12 = baisyccoind-res.rc
+@TARGET_WINDOWS_TRUE@am__append_13 = baisyccoin-cli-res.rc
 @BUILD_BITCOIN_LIBS_TRUE@@GLIBC_BACK_COMPAT_TRUE@am__append_14 = compat/glibc_compat.cpp \
 @BUILD_BITCOIN_LIBS_TRUE@@GLIBC_BACK_COMPAT_TRUE@	compat/glibcxx_compat.cpp
 @BUILD_BITCOIN_LIBS_TRUE@@USE_LIBSECP256K1_TRUE@am__append_15 = secp256k1/libsecp256k1.la
@@ -135,7 +135,7 @@ TESTS = $(am__EXEEXT_6) $(am__EXEEXT_5)
 @ENABLE_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_20 = $(LIBBITCOIN_WALLET)
 @ENABLE_TESTS_TRUE@@ENABLE_ZMQ_TRUE@am__append_21 = $(ZMQ_LIBS)
 @ENABLE_TESTS_TRUE@am__append_22 = $(CLEAN_BITCOIN_TEST)
-@ENABLE_QT_TRUE@am__append_23 = qt/ganjacoin-qt
+@ENABLE_QT_TRUE@am__append_23 = qt/baisyccoin-qt
 @ENABLE_QT_TRUE@am__append_24 = qt/libbitcoinqt.a
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_25 = \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/addressbookpage.cpp \
@@ -171,7 +171,7 @@ TESTS = $(am__EXEEXT_6) $(am__EXEEXT_5)
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/walletmodel.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/walletmodeltransaction.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/walletview.cpp \
-@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/zganjacoincontroldialog.cpp
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/zbaisyccoincontroldialog.cpp
 
 @ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__append_26 = $(BITCOIN_MM)
 @ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__append_27 = $(BITCOIN_RC)
@@ -217,7 +217,7 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 DIST_COMMON = $(srcdir)/Makefile.am $(am__include_HEADERS_DIST) \
 	$(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
-CONFIG_HEADER = $(top_builddir)/src/config/ganjacoin-config.h
+CONFIG_HEADER = $(top_builddir)/src/config/baisyccoin-config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 ARFLAGS = cru
@@ -455,7 +455,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bitcoinaddressvalidator.cpp \
 	qt/transactionrecord.cpp qt/transactiontablemodel.cpp \
 	qt/transactionview.cpp qt/walletframe.cpp qt/walletmodel.cpp \
 	qt/walletmodeltransaction.cpp qt/walletview.cpp \
-	qt/zganjacoincontroldialog.cpp qt/addressbookpage.h \
+	qt/zbaisyccoincontroldialog.cpp qt/addressbookpage.h \
 	qt/addresstablemodel.h qt/askpassphrasedialog.h \
 	qt/bip38tooldialog.h qt/bitcoinaddressvalidator.h \
 	qt/bitcoinamountfield.h qt/bitcoingui.h qt/bitcoinunits.h \
@@ -478,7 +478,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bitcoinaddressvalidator.cpp \
 	qt/transactionrecord.h qt/transactiontablemodel.h \
 	qt/transactionview.h qt/utilitydialog.h qt/walletframe.h \
 	qt/walletmodel.h qt/walletmodeltransaction.h qt/walletview.h \
-	qt/winshutdownmonitor.h qt/zganjacoincontroldialog.h \
+	qt/winshutdownmonitor.h qt/zbaisyccoincontroldialog.h \
 	qt/forms/addressbookpage.ui qt/forms/askpassphrasedialog.ui \
 	qt/forms/bip38tooldialog.ui qt/forms/coincontroldialog.ui \
 	qt/forms/blockexplorer.ui qt/forms/obfuscationconfig.ui \
@@ -491,21 +491,21 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bitcoinaddressvalidator.cpp \
 	qt/forms/rpcconsole.ui qt/forms/sendcoinsdialog.ui \
 	qt/forms/sendcoinsentry.ui qt/forms/signverifymessagedialog.ui \
 	qt/forms/transactiondescdialog.ui \
-	qt/forms/zganjacoincontroldialog.ui qt/ganjacoin.qrc \
-	qt/ganjacoin_locale.qrc qt/locale/ganjacoin_bg.ts \
-	qt/locale/ganjacoin_ca.ts qt/locale/ganjacoin_cs.ts \
-	qt/locale/ganjacoin_da.ts qt/locale/ganjacoin_de.ts \
-	qt/locale/ganjacoin_en.ts qt/locale/ganjacoin_en_US.ts \
-	qt/locale/ganjacoin_es.ts qt/locale/ganjacoin_fi.ts \
-	qt/locale/ganjacoin_fr_FR.ts qt/locale/ganjacoin_hr.ts \
-	qt/locale/ganjacoin_it.ts qt/locale/ganjacoin_ja.ts \
-	qt/locale/ganjacoin_ko_KR.ts qt/locale/ganjacoin_nl.ts \
-	qt/locale/ganjacoin_pl.ts qt/locale/ganjacoin_pt.ts \
-	qt/locale/ganjacoin_pt_BR.ts qt/locale/ganjacoin_ro_RO.ts \
-	qt/locale/ganjacoin_ru.ts qt/locale/ganjacoin_sk.ts \
-	qt/locale/ganjacoin_sv.ts qt/locale/ganjacoin_tr.ts \
-	qt/locale/ganjacoin_uk.ts qt/locale/ganjacoin_zh_CN.ts \
-	qt/locale/ganjacoin_zh_TW.ts qt/paymentrequest.proto \
+	qt/forms/zbaisyccoincontroldialog.ui qt/baisyccoin.qrc \
+	qt/baisyccoin_locale.qrc qt/locale/baisyccoin_bg.ts \
+	qt/locale/baisyccoin_ca.ts qt/locale/baisyccoin_cs.ts \
+	qt/locale/baisyccoin_da.ts qt/locale/baisyccoin_de.ts \
+	qt/locale/baisyccoin_en.ts qt/locale/baisyccoin_en_US.ts \
+	qt/locale/baisyccoin_es.ts qt/locale/baisyccoin_fi.ts \
+	qt/locale/baisyccoin_fr_FR.ts qt/locale/baisyccoin_hr.ts \
+	qt/locale/baisyccoin_it.ts qt/locale/baisyccoin_ja.ts \
+	qt/locale/baisyccoin_ko_KR.ts qt/locale/baisyccoin_nl.ts \
+	qt/locale/baisyccoin_pl.ts qt/locale/baisyccoin_pt.ts \
+	qt/locale/baisyccoin_pt_BR.ts qt/locale/baisyccoin_ro_RO.ts \
+	qt/locale/baisyccoin_ru.ts qt/locale/baisyccoin_sk.ts \
+	qt/locale/baisyccoin_sv.ts qt/locale/baisyccoin_tr.ts \
+	qt/locale/baisyccoin_uk.ts qt/locale/baisyccoin_zh_CN.ts \
+	qt/locale/baisyccoin_zh_TW.ts qt/paymentrequest.proto \
 	qt/res/icons/add.png qt/res/icons/address-book.png \
 	qt/res/icons/bitcoin.ico qt/res/icons/bitcoin.png \
 	qt/res/icons/bitcoin_testnet.ico \
@@ -533,14 +533,14 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bitcoinaddressvalidator.cpp \
 	qt/res/icons/transaction_conflicted.png \
 	qt/res/icons/tx_inout.png qt/res/icons/tx_input.png \
 	qt/res/icons/tx_output.png qt/res/icons/tx_mined.png \
-	qt/res/icons/tx_mnreward.png qt/res/icons/unit_ganjacoin.png \
-	qt/res/icons/unit_mganjacoin.png \
-	qt/res/icons/unit_uganjacoin.png \
-	qt/res/icons/unit_tganjacoin.png \
-	qt/res/icons/unit_tmganjacoin.png \
-	qt/res/icons/unit_tuganjacoin.png qt/res/images/about.png \
+	qt/res/icons/tx_mnreward.png qt/res/icons/unit_baisyccoin.png \
+	qt/res/icons/unit_mbaisyccoin.png \
+	qt/res/icons/unit_ubaisyccoin.png \
+	qt/res/icons/unit_tbaisyccoin.png \
+	qt/res/icons/unit_tmbaisyccoin.png \
+	qt/res/icons/unit_tubaisyccoin.png qt/res/images/about.png \
 	qt/res/images/splash.png qt/res/images/splash_testnet.png \
-	qt/res/images/ganjacoin_logo_horizontal.png \
+	qt/res/images/baisyccoin_logo_horizontal.png \
 	qt/res/images/downArrow.png qt/res/images/downArrow_small.png \
 	qt/res/images/upArrow_small.png \
 	qt/res/images/leftArrow_small.png \
@@ -586,7 +586,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bitcoinaddressvalidator.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-walletmodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-walletmodeltransaction.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-walletview.$(OBJEXT) \
-@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-zganjacoincontroldialog.$(OBJEXT)
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.$(OBJEXT)
 @ENABLE_QT_TRUE@am__objects_4 = qt/qt_libbitcoinqt_a-bitcoinaddressvalidator.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-bitcoinamountfield.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-bitcoingui.$(OBJEXT) \
@@ -667,11 +667,11 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bitcoinaddressvalidator.cpp \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_walletframe.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_walletmodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_walletview.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.$(OBJEXT)
+@ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.$(OBJEXT)
 @ENABLE_QT_TRUE@am__objects_6 = qt/qt_libbitcoinqt_a-paymentrequest.pb.$(OBJEXT)
 @ENABLE_QT_TRUE@am__objects_7 =  \
-@ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-qrc_ganjacoin.$(OBJEXT)
-@ENABLE_QT_TRUE@am__objects_8 = qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.$(OBJEXT)
+@ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-qrc_baisyccoin.$(OBJEXT)
+@ENABLE_QT_TRUE@am__objects_8 = qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.$(OBJEXT)
 @ENABLE_QT_TRUE@nodist_qt_libbitcoinqt_a_OBJECTS = $(am__objects_5) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_6) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_7) \
@@ -760,45 +760,45 @@ libbitcoinconsensus_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(LDFLAGS) -o $@
 @BUILD_BITCOIN_LIBS_TRUE@am_libbitcoinconsensus_la_rpath = -rpath \
 @BUILD_BITCOIN_LIBS_TRUE@	$(libdir)
-@BUILD_BITCOIND_TRUE@am__EXEEXT_1 = ganjacoind$(EXEEXT)
-@BUILD_BITCOIN_UTILS_TRUE@am__EXEEXT_2 = ganjacoin-cli$(EXEEXT) \
-@BUILD_BITCOIN_UTILS_TRUE@	ganjacoin-tx$(EXEEXT)
+@BUILD_BITCOIND_TRUE@am__EXEEXT_1 = baisyccoind$(EXEEXT)
+@BUILD_BITCOIN_UTILS_TRUE@am__EXEEXT_2 = baisyccoin-cli$(EXEEXT) \
+@BUILD_BITCOIN_UTILS_TRUE@	baisyccoin-tx$(EXEEXT)
 @ENABLE_TESTS_TRUE@am__EXEEXT_3 = test/test_xorn$(EXEEXT)
-@ENABLE_QT_TRUE@am__EXEEXT_4 = qt/ganjacoin-qt$(EXEEXT)
+@ENABLE_QT_TRUE@am__EXEEXT_4 = qt/baisyccoin-qt$(EXEEXT)
 @ENABLE_QT_TESTS_TRUE@am__EXEEXT_5 = qt/test/test_xorn-qt$(EXEEXT)
 PROGRAMS = $(bin_PROGRAMS)
-am__ganjacoin_cli_SOURCES_DIST = ganjacoin-cli.cpp \
-	ganjacoin-cli-res.rc
-@TARGET_WINDOWS_TRUE@am__objects_10 = ganjacoin-cli-res.$(OBJEXT)
-am_ganjacoin_cli_OBJECTS = ganjacoin_cli-ganjacoin-cli.$(OBJEXT) \
+am__baisyccoin_cli_SOURCES_DIST = baisyccoin-cli.cpp \
+	baisyccoin-cli-res.rc
+@TARGET_WINDOWS_TRUE@am__objects_10 = baisyccoin-cli-res.$(OBJEXT)
+am_baisyccoin_cli_OBJECTS = baisyccoin_cli-baisyccoin-cli.$(OBJEXT) \
 	$(am__objects_10)
-ganjacoin_cli_OBJECTS = $(am_ganjacoin_cli_OBJECTS)
-ganjacoin_cli_DEPENDENCIES = $(LIBBITCOIN_CLI) $(LIBBITCOIN_UTIL) \
+baisyccoin_cli_OBJECTS = $(am_baisyccoin_cli_OBJECTS)
+baisyccoin_cli_DEPENDENCIES = $(LIBBITCOIN_CLI) $(LIBBITCOIN_UTIL) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
-ganjacoin_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+baisyccoin_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
-	$(AM_CXXFLAGS) $(CXXFLAGS) $(ganjacoin_cli_LDFLAGS) $(LDFLAGS) \
+	$(AM_CXXFLAGS) $(CXXFLAGS) $(baisyccoin_cli_LDFLAGS) $(LDFLAGS) \
 	-o $@
-am_ganjacoin_tx_OBJECTS = ganjacoin_tx-ganjacoin-tx.$(OBJEXT)
-ganjacoin_tx_OBJECTS = $(am_ganjacoin_tx_OBJECTS)
-ganjacoin_tx_DEPENDENCIES = $(LIBBITCOIN_UNIVALUE) \
+am_baisyccoin_tx_OBJECTS = baisyccoin_tx-baisyccoin-tx.$(OBJEXT)
+baisyccoin_tx_OBJECTS = $(am_baisyccoin_tx_OBJECTS)
+baisyccoin_tx_DEPENDENCIES = $(LIBBITCOIN_UNIVALUE) \
 	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_ZEROCOIN) $(LIBBITCOIN_UTIL) \
 	$(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-ganjacoin_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+baisyccoin_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
-	$(CXXFLAGS) $(ganjacoin_tx_LDFLAGS) $(LDFLAGS) -o $@
-am__ganjacoind_SOURCES_DIST = ganjacoind.cpp ganjacoind-res.rc
-@TARGET_WINDOWS_TRUE@am__objects_11 = ganjacoind-res.$(OBJEXT)
-am_ganjacoind_OBJECTS = ganjacoind-ganjacoind.$(OBJEXT) \
+	$(CXXFLAGS) $(baisyccoin_tx_LDFLAGS) $(LDFLAGS) -o $@
+am__baisyccoind_SOURCES_DIST = baisyccoind.cpp baisyccoind-res.rc
+@TARGET_WINDOWS_TRUE@am__objects_11 = baisyccoind-res.$(OBJEXT)
+am_baisyccoind_OBJECTS = baisyccoind-baisyccoind.$(OBJEXT) \
 	$(am__objects_11)
-ganjacoind_OBJECTS = $(am_ganjacoind_OBJECTS)
+baisyccoind_OBJECTS = $(am_baisyccoind_OBJECTS)
 am__DEPENDENCIES_2 = $(am__append_2)
 am__DEPENDENCIES_3 = $(am__append_3)
 @ENABLE_ZMQ_TRUE@am__DEPENDENCIES_4 = $(LIBBITCOIN_ZMQ) \
 @ENABLE_ZMQ_TRUE@	$(am__DEPENDENCIES_1)
-ganjacoind_DEPENDENCIES = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
+baisyccoind_DEPENDENCIES = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UNIVALUE) $(LIBBITCOIN_ZEROCOIN) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_3) $(LIBSECP256K1) $(am__DEPENDENCIES_4) \
@@ -806,27 +806,27 @@ ganjacoind_DEPENDENCIES = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-ganjacoind_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+baisyccoind_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
-	$(CXXFLAGS) $(ganjacoind_LDFLAGS) $(LDFLAGS) -o $@
-am__qt_ganjacoin_qt_SOURCES_DIST = qt/ganjacoin.cpp \
+	$(CXXFLAGS) $(baisyccoind_LDFLAGS) $(LDFLAGS) -o $@
+am__qt_baisyccoin_qt_SOURCES_DIST = qt/baisyccoin.cpp \
 	qt/macdockiconhandler.mm qt/macnotificationhandler.mm \
-	qt/res/ganjacoin-qt-res.rc
-@ENABLE_QT_TRUE@am__objects_12 = qt/qt_ganjacoin_qt-macdockiconhandler.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_ganjacoin_qt-macnotificationhandler.$(OBJEXT)
+	qt/res/baisyccoin-qt-res.rc
+@ENABLE_QT_TRUE@am__objects_12 = qt/qt_baisyccoin_qt-macdockiconhandler.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_baisyccoin_qt-macnotificationhandler.$(OBJEXT)
 @ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__objects_13 =  \
 @ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@	$(am__objects_12)
-@ENABLE_QT_TRUE@am__objects_14 = qt/res/ganjacoin-qt-res.$(OBJEXT)
+@ENABLE_QT_TRUE@am__objects_14 = qt/res/baisyccoin-qt-res.$(OBJEXT)
 @ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__objects_15 =  \
 @ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@	$(am__objects_14)
-@ENABLE_QT_TRUE@am_qt_ganjacoin_qt_OBJECTS =  \
-@ENABLE_QT_TRUE@	qt/qt_ganjacoin_qt-ganjacoin.$(OBJEXT) \
+@ENABLE_QT_TRUE@am_qt_baisyccoin_qt_OBJECTS =  \
+@ENABLE_QT_TRUE@	qt/qt_baisyccoin_qt-baisyccoin.$(OBJEXT) \
 @ENABLE_QT_TRUE@	$(am__objects_13) $(am__objects_15)
-qt_ganjacoin_qt_OBJECTS = $(am_qt_ganjacoin_qt_OBJECTS)
+qt_baisyccoin_qt_OBJECTS = $(am_qt_baisyccoin_qt_OBJECTS)
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@am__DEPENDENCIES_5 =  \
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@	$(LIBBITCOIN_ZMQ) \
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@	$(am__DEPENDENCIES_1)
-@ENABLE_QT_TRUE@qt_ganjacoin_qt_DEPENDENCIES = qt/libbitcoinqt.a \
+@ENABLE_QT_TRUE@qt_baisyccoin_qt_DEPENDENCIES = qt/libbitcoinqt.a \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_28) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_5) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
@@ -839,10 +839,10 @@ qt_ganjacoin_qt_OBJECTS = $(am_qt_ganjacoin_qt_OBJECTS)
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 @ENABLE_QT_TRUE@	$(LIBSECP256K1) $(am__DEPENDENCIES_1) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1)
-qt_ganjacoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) \
-	$(qt_ganjacoin_qt_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
+qt_baisyccoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) \
+	$(qt_baisyccoin_qt_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(OBJCXXLD) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) \
-	$(qt_ganjacoin_qt_LDFLAGS) $(LDFLAGS) -o $@
+	$(qt_baisyccoin_qt_LDFLAGS) $(LDFLAGS) -o $@
 am__qt_test_test_xorn_qt_SOURCES_DIST = qt/test/test_main.cpp \
 	qt/test/uritests.cpp qt/test/uritests.h \
 	qt/test/paymentrequestdata.h qt/test/paymentservertests.h \
@@ -1065,9 +1065,9 @@ SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) \
 	$(qt_libbitcoinqt_a_SOURCES) \
 	$(nodist_qt_libbitcoinqt_a_SOURCES) \
 	$(univalue_libbitcoin_univalue_a_SOURCES) \
-	$(libbitcoinconsensus_la_SOURCES) $(ganjacoin_cli_SOURCES) \
-	$(ganjacoin_tx_SOURCES) $(ganjacoind_SOURCES) \
-	$(qt_ganjacoin_qt_SOURCES) $(qt_test_test_xorn_qt_SOURCES) \
+	$(libbitcoinconsensus_la_SOURCES) $(baisyccoin_cli_SOURCES) \
+	$(baisyccoin_tx_SOURCES) $(baisyccoind_SOURCES) \
+	$(qt_baisyccoin_qt_SOURCES) $(qt_test_test_xorn_qt_SOURCES) \
 	$(nodist_qt_test_test_xorn_qt_SOURCES) \
 	$(test_test_xorn_SOURCES) $(nodist_test_test_xorn_SOURCES)
 DIST_SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) \
@@ -1080,9 +1080,9 @@ DIST_SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) \
 	$(am__qt_libbitcoinqt_a_SOURCES_DIST) \
 	$(univalue_libbitcoin_univalue_a_SOURCES) \
 	$(am__libbitcoinconsensus_la_SOURCES_DIST) \
-	$(am__ganjacoin_cli_SOURCES_DIST) $(ganjacoin_tx_SOURCES) \
-	$(am__ganjacoind_SOURCES_DIST) \
-	$(am__qt_ganjacoin_qt_SOURCES_DIST) \
+	$(am__baisyccoin_cli_SOURCES_DIST) $(baisyccoin_tx_SOURCES) \
+	$(am__baisyccoind_SOURCES_DIST) \
+	$(am__qt_baisyccoin_qt_SOURCES_DIST) \
 	$(am__qt_test_test_xorn_qt_SOURCES_DIST) \
 	$(am__test_test_xorn_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
@@ -1600,7 +1600,7 @@ EXTRA_LIBRARIES = crypto/libbitcoin_crypto.a libbitcoin_util.a \
 @BUILD_BITCOIN_LIBS_TRUE@lib_LTLIBRARIES = libbitcoinconsensus.la
 @BUILD_BITCOIN_LIBS_FALSE@LIBBITCOIN_CONSENSUS = 
 @BUILD_BITCOIN_LIBS_TRUE@LIBBITCOIN_CONSENSUS = libbitcoinconsensus.la
-# ganjacoin core #
+# baisyccoin core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
@@ -1711,7 +1711,7 @@ JSON_H = \
   json/json_spirit_writer_template.h
 
 
-# server: shared between ganjacoind and ganjacoin-qt
+# server: shared between baisyccoind and baisyccoin-qt
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
@@ -1755,7 +1755,7 @@ libbitcoin_server_a_SOURCES = \
 @ENABLE_ZMQ_TRUE@  zmq/zmqpublishnotifier.cpp
 
 
-# wallet: shared between ganjacoind and ganjacoin-qt, but only linked
+# wallet: shared between baisyccoind and baisyccoin-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CFLAGS = -fPIC
 libbitcoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
@@ -1878,7 +1878,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/SerialNumberSignatureOfKnowledge.cpp
 
 
-# common: shared between ganjacoind, and ganjacoin-qt and non-server tools
+# common: shared between baisyccoind, and baisyccoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   accumulators.cpp \
@@ -1924,7 +1924,7 @@ libbitcoin_util_a_SOURCES = allocators.cpp compat/strnlen.cpp \
 	utilstrencodings.cpp utilmoneystr.cpp utiltime.cpp \
 	$(BITCOIN_CORE_H) $(am__append_9)
 
-# cli: shared between ganjacoin-cli and ganjacoin-qt
+# cli: shared between baisyccoin-cli and baisyccoin-qt
 libbitcoin_cli_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_SOURCES = \
   rpcclient.cpp \
@@ -1934,18 +1934,18 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-ganjacoind_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
+baisyccoind_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UNIVALUE) $(LIBBITCOIN_ZEROCOIN) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBLEVELDB) \
 	$(LIBMEMENV) $(LIBSECP256K1) $(am__append_10) $(am__append_11) \
 	$(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
 	$(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-ganjacoind_SOURCES = ganjacoind.cpp $(am__append_12)
-ganjacoind_CPPFLAGS = $(BITCOIN_INCLUDES)
-ganjacoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+baisyccoind_SOURCES = baisyccoind.cpp $(am__append_12)
+baisyccoind_CPPFLAGS = $(BITCOIN_INCLUDES)
+baisyccoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
-# ganjacoin-cli binary #
-ganjacoin_cli_LDADD = \
+# baisyccoin-cli binary #
+baisyccoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_UTIL) \
   $(BOOST_LIBS) \
@@ -1953,12 +1953,12 @@ ganjacoin_cli_LDADD = \
   $(CRYPTO_LIBS) \
   $(EVENT_LIBS)
 
-ganjacoin_cli_SOURCES = ganjacoin-cli.cpp $(am__append_13)
-ganjacoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+baisyccoin_cli_SOURCES = baisyccoin-cli.cpp $(am__append_13)
+baisyccoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 #
 
-# ganjacoin-tx binary #
-ganjacoin_tx_LDADD = \
+# baisyccoin-tx binary #
+baisyccoin_tx_LDADD = \
   $(LIBBITCOIN_UNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -1968,11 +1968,11 @@ ganjacoin_tx_LDADD = \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
-ganjacoin_tx_SOURCES = ganjacoin-tx.cpp
-ganjacoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+baisyccoin_tx_SOURCES = baisyccoin-tx.cpp
+baisyccoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-ganjacoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-ganjacoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+baisyccoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+baisyccoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 @BUILD_BITCOIN_LIBS_TRUE@include_HEADERS = script/bitcoinconsensus.h
 @BUILD_BITCOIN_LIBS_TRUE@libbitcoinconsensus_la_SOURCES =  \
 @BUILD_BITCOIN_LIBS_TRUE@	allocators.cpp \
@@ -2068,34 +2068,34 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_TESTS_TRUE@nodist_test_test_xorn_SOURCES = $(GENERATED_TEST_FILES)
 @ENABLE_TESTS_TRUE@CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
 
-# ganjacoin qt core #
+# baisyccoin qt core #
 @ENABLE_QT_TRUE@QT_TS = \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_bg.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_ca.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_cs.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_da.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_de.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_en.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_en_US.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_es.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_fi.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_fr_FR.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_hr.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_it.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_ja.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_ko_KR.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_nl.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_pl.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_pt.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_pt_BR.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_ro_RO.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_ru.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_sk.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_sv.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_tr.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_uk.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_zh_CN.ts \
-@ENABLE_QT_TRUE@  qt/locale/ganjacoin_zh_TW.ts
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_bg.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_ca.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_cs.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_da.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_de.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_en.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_en_US.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_es.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_fi.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_fr_FR.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_hr.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_it.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_ja.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_ko_KR.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_nl.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_pl.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_pt.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_pt_BR.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_ro_RO.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_ru.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_sk.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_sv.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_tr.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_uk.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_zh_CN.ts \
+@ENABLE_QT_TRUE@  qt/locale/baisyccoin_zh_TW.ts
 
 @ENABLE_QT_TRUE@QT_FORMS_UI = \
 @ENABLE_QT_TRUE@  qt/forms/addressbookpage.ui \
@@ -2121,7 +2121,7 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@  qt/forms/sendcoinsentry.ui \
 @ENABLE_QT_TRUE@  qt/forms/signverifymessagedialog.ui \
 @ENABLE_QT_TRUE@  qt/forms/transactiondescdialog.ui \
-@ENABLE_QT_TRUE@  qt/forms/zganjacoincontroldialog.ui
+@ENABLE_QT_TRUE@  qt/forms/zbaisyccoincontroldialog.ui
 
 @ENABLE_QT_TRUE@QT_MOC_CPP = \
 @ENABLE_QT_TRUE@  qt/moc_addressbookpage.cpp \
@@ -2174,23 +2174,23 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@  qt/moc_walletframe.cpp \
 @ENABLE_QT_TRUE@  qt/moc_walletmodel.cpp \
 @ENABLE_QT_TRUE@  qt/moc_walletview.cpp \
-@ENABLE_QT_TRUE@  qt/moc_zganjacoincontroldialog.cpp
+@ENABLE_QT_TRUE@  qt/moc_zbaisyccoincontroldialog.cpp
 
 @ENABLE_QT_TRUE@BITCOIN_MM = \
 @ENABLE_QT_TRUE@  qt/macdockiconhandler.mm \
 @ENABLE_QT_TRUE@  qt/macnotificationhandler.mm
 
 @ENABLE_QT_TRUE@QT_MOC = \
-@ENABLE_QT_TRUE@  qt/ganjacoin.moc \
+@ENABLE_QT_TRUE@  qt/baisyccoin.moc \
 @ENABLE_QT_TRUE@  qt/bitcoinamountfield.moc \
 @ENABLE_QT_TRUE@  qt/intro.moc \
 @ENABLE_QT_TRUE@  qt/overviewpage.moc \
 @ENABLE_QT_TRUE@  qt/rpcconsole.moc
 
-@ENABLE_QT_TRUE@QT_QRC_CPP = qt/qrc_ganjacoin.cpp
-@ENABLE_QT_TRUE@QT_QRC = qt/ganjacoin.qrc
-@ENABLE_QT_TRUE@QT_QRC_LOCALE_CPP = qt/qrc_ganjacoin_locale.cpp
-@ENABLE_QT_TRUE@QT_QRC_LOCALE = qt/ganjacoin_locale.qrc
+@ENABLE_QT_TRUE@QT_QRC_CPP = qt/qrc_baisyccoin.cpp
+@ENABLE_QT_TRUE@QT_QRC = qt/baisyccoin.qrc
+@ENABLE_QT_TRUE@QT_QRC_LOCALE_CPP = qt/qrc_baisyccoin_locale.cpp
+@ENABLE_QT_TRUE@QT_QRC_LOCALE = qt/baisyccoin_locale.qrc
 @ENABLE_QT_TRUE@PROTOBUF_CC = qt/paymentrequest.pb.cc
 @ENABLE_QT_TRUE@PROTOBUF_H = qt/paymentrequest.pb.h
 @ENABLE_QT_TRUE@PROTOBUF_PROTO = qt/paymentrequest.proto
@@ -2252,7 +2252,7 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@  qt/walletmodeltransaction.h \
 @ENABLE_QT_TRUE@  qt/walletview.h \
 @ENABLE_QT_TRUE@  qt/winshutdownmonitor.h \
-@ENABLE_QT_TRUE@  qt/zganjacoincontroldialog.h
+@ENABLE_QT_TRUE@  qt/zbaisyccoincontroldialog.h
 
 @ENABLE_QT_TRUE@RES_ICONS = \
 @ENABLE_QT_TRUE@  qt/res/icons/add.png \
@@ -2307,12 +2307,12 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@  qt/res/icons/tx_output.png \
 @ENABLE_QT_TRUE@  qt/res/icons/tx_mined.png \
 @ENABLE_QT_TRUE@  qt/res/icons/tx_mnreward.png \
-@ENABLE_QT_TRUE@  qt/res/icons/unit_ganjacoin.png \
-@ENABLE_QT_TRUE@  qt/res/icons/unit_mganjacoin.png \
-@ENABLE_QT_TRUE@  qt/res/icons/unit_uganjacoin.png \
-@ENABLE_QT_TRUE@  qt/res/icons/unit_tganjacoin.png \
-@ENABLE_QT_TRUE@  qt/res/icons/unit_tmganjacoin.png \
-@ENABLE_QT_TRUE@  qt/res/icons/unit_tuganjacoin.png
+@ENABLE_QT_TRUE@  qt/res/icons/unit_baisyccoin.png \
+@ENABLE_QT_TRUE@  qt/res/icons/unit_baisyccoin.png \
+@ENABLE_QT_TRUE@  qt/res/icons/unit_ubaisyccoin.png \
+@ENABLE_QT_TRUE@  qt/res/icons/unit_tbaisyccoin.png \
+@ENABLE_QT_TRUE@  qt/res/icons/unit_tmbaisyccoin.png \
+@ENABLE_QT_TRUE@  qt/res/icons/unit_tubaisyccoin.png
 
 @ENABLE_QT_TRUE@BITCOIN_QT_CPP = qt/bitcoinaddressvalidator.cpp \
 @ENABLE_QT_TRUE@	qt/bitcoinamountfield.cpp qt/bitcoingui.cpp \
@@ -2331,7 +2331,7 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@  qt/res/images/about.png \
 @ENABLE_QT_TRUE@  qt/res/images/splash.png \
 @ENABLE_QT_TRUE@  qt/res/images/splash_testnet.png \
-@ENABLE_QT_TRUE@  qt/res/images/ganjacoin_logo_horizontal.png \
+@ENABLE_QT_TRUE@  qt/res/images/baisyccoin_logo_horizontal.png \
 @ENABLE_QT_TRUE@  qt/res/images/downArrow.png \
 @ENABLE_QT_TRUE@  qt/res/images/downArrow_small.png \
 @ENABLE_QT_TRUE@  qt/res/images/upArrow_small.png \
@@ -2351,7 +2351,7 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@  qt/res/css/default.css
 
 @ENABLE_QT_TRUE@RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
-@ENABLE_QT_TRUE@BITCOIN_RC = qt/res/ganjacoin-qt-res.rc
+@ENABLE_QT_TRUE@BITCOIN_RC = qt/res/baisyccoin-qt-res.rc
 @ENABLE_QT_TRUE@BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
 @ENABLE_QT_TRUE@  -I$(builddir)/qt/forms
 
@@ -2368,13 +2368,13 @@ EXTRA_DIST = leveldb $(am__append_18)
 # forms/foo.h -> forms/ui_foo.h
 @ENABLE_QT_TRUE@QT_FORMS_H = $(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
 
-# ganjacoin-qt binary #
-@ENABLE_QT_TRUE@qt_ganjacoin_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# baisyccoin-qt binary #
+@ENABLE_QT_TRUE@qt_baisyccoin_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
 @ENABLE_QT_TRUE@  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-@ENABLE_QT_TRUE@qt_ganjacoin_qt_SOURCES = qt/ganjacoin.cpp \
+@ENABLE_QT_TRUE@qt_baisyccoin_qt_SOURCES = qt/baisyccoin.cpp \
 @ENABLE_QT_TRUE@	$(am__append_26) $(am__append_27)
-@ENABLE_QT_TRUE@qt_ganjacoin_qt_LDADD = qt/libbitcoinqt.a \
+@ENABLE_QT_TRUE@qt_baisyccoin_qt_LDADD = qt/libbitcoinqt.a \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_28) \
 @ENABLE_QT_TRUE@	$(am__append_29) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
@@ -2385,8 +2385,8 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@	$(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
 @ENABLE_QT_TRUE@	$(MINIUPNPC_LIBS) $(LIBSECP256K1) \
 @ENABLE_QT_TRUE@	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-@ENABLE_QT_TRUE@qt_ganjacoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-@ENABLE_QT_TRUE@qt_ganjacoin_qt_LIBTOOLFLAGS = --tag CXX
+@ENABLE_QT_TRUE@qt_baisyccoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+@ENABLE_QT_TRUE@qt_baisyccoin_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 @ENABLE_QT_TRUE@QT_QM = $(QT_TS:.ts=.qm)
@@ -2761,7 +2761,7 @@ qt/qt_libbitcoinqt_a-walletmodeltransaction.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-walletview.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libbitcoinqt_a-zganjacoincontroldialog.$(OBJEXT):  \
+qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-moc_addressbookpage.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
@@ -2863,13 +2863,13 @@ qt/qt_libbitcoinqt_a-moc_walletmodel.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-moc_walletview.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.$(OBJEXT):  \
+qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-paymentrequest.pb.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libbitcoinqt_a-qrc_ganjacoin.$(OBJEXT): qt/$(am__dirstamp) \
+qt/qt_libbitcoinqt_a-qrc_baisyccoin.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.$(OBJEXT):  \
+qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 
 qt/libbitcoinqt.a: $(qt_libbitcoinqt_a_OBJECTS) $(qt_libbitcoinqt_a_DEPENDENCIES) $(EXTRA_qt_libbitcoinqt_a_DEPENDENCIES) qt/$(am__dirstamp)
@@ -3006,22 +3006,22 @@ clean-binPROGRAMS:
 	echo " rm -f" $$list; \
 	rm -f $$list
 
-ganjacoin-cli$(EXEEXT): $(ganjacoin_cli_OBJECTS) $(ganjacoin_cli_DEPENDENCIES) $(EXTRA_ganjacoin_cli_DEPENDENCIES) 
-	@rm -f ganjacoin-cli$(EXEEXT)
-	$(AM_V_CXXLD)$(ganjacoin_cli_LINK) $(ganjacoin_cli_OBJECTS) $(ganjacoin_cli_LDADD) $(LIBS)
+baisyccoin-cli$(EXEEXT): $(baisyccoin_cli_OBJECTS) $(baisyccoin_cli_DEPENDENCIES) $(EXTRA_baisyccoin_cli_DEPENDENCIES) 
+	@rm -f baisyccoin-cli$(EXEEXT)
+	$(AM_V_CXXLD)$(baisyccoin_cli_LINK) $(baisyccoin_cli_OBJECTS) $(baisyccoin_cli_LDADD) $(LIBS)
 
-ganjacoin-tx$(EXEEXT): $(ganjacoin_tx_OBJECTS) $(ganjacoin_tx_DEPENDENCIES) $(EXTRA_ganjacoin_tx_DEPENDENCIES) 
-	@rm -f ganjacoin-tx$(EXEEXT)
-	$(AM_V_CXXLD)$(ganjacoin_tx_LINK) $(ganjacoin_tx_OBJECTS) $(ganjacoin_tx_LDADD) $(LIBS)
+baisyccoin-tx$(EXEEXT): $(baisyccoin_tx_OBJECTS) $(baisyccoin_tx_DEPENDENCIES) $(EXTRA_baisyccoin_tx_DEPENDENCIES) 
+	@rm -f baisyccoin-tx$(EXEEXT)
+	$(AM_V_CXXLD)$(baisyccoin_tx_LINK) $(baisyccoin_tx_OBJECTS) $(baisyccoin_tx_LDADD) $(LIBS)
 
-ganjacoind$(EXEEXT): $(ganjacoind_OBJECTS) $(ganjacoind_DEPENDENCIES) $(EXTRA_ganjacoind_DEPENDENCIES) 
-	@rm -f ganjacoind$(EXEEXT)
-	$(AM_V_CXXLD)$(ganjacoind_LINK) $(ganjacoind_OBJECTS) $(ganjacoind_LDADD) $(LIBS)
-qt/qt_ganjacoin_qt-ganjacoin.$(OBJEXT): qt/$(am__dirstamp) \
+baisyccoind$(EXEEXT): $(baisyccoind_OBJECTS) $(baisyccoind_DEPENDENCIES) $(EXTRA_baisyccoind_DEPENDENCIES) 
+	@rm -f baisyccoind$(EXEEXT)
+	$(AM_V_CXXLD)$(baisyccoind_LINK) $(baisyccoind_OBJECTS) $(baisyccoind_LDADD) $(LIBS)
+qt/qt_baisyccoin_qt-baisyccoin.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_ganjacoin_qt-macdockiconhandler.$(OBJEXT): qt/$(am__dirstamp) \
+qt/qt_baisyccoin_qt-macdockiconhandler.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_ganjacoin_qt-macnotificationhandler.$(OBJEXT):  \
+qt/qt_baisyccoin_qt-macnotificationhandler.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 qt/res/$(am__dirstamp):
 	@$(MKDIR_P) qt/res
@@ -3029,12 +3029,12 @@ qt/res/$(am__dirstamp):
 qt/res/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) qt/res/$(DEPDIR)
 	@: > qt/res/$(DEPDIR)/$(am__dirstamp)
-qt/res/ganjacoin-qt-res.$(OBJEXT): qt/res/$(am__dirstamp) \
+qt/res/baisyccoin-qt-res.$(OBJEXT): qt/res/$(am__dirstamp) \
 	qt/res/$(DEPDIR)/$(am__dirstamp)
 
-qt/ganjacoin-qt$(EXEEXT): $(qt_ganjacoin_qt_OBJECTS) $(qt_ganjacoin_qt_DEPENDENCIES) $(EXTRA_qt_ganjacoin_qt_DEPENDENCIES) qt/$(am__dirstamp)
-	@rm -f qt/ganjacoin-qt$(EXEEXT)
-	$(AM_V_OBJCXXLD)$(qt_ganjacoin_qt_LINK) $(qt_ganjacoin_qt_OBJECTS) $(qt_ganjacoin_qt_LDADD) $(LIBS)
+qt/baisyccoin-qt$(EXEEXT): $(qt_baisyccoin_qt_OBJECTS) $(qt_baisyccoin_qt_DEPENDENCIES) $(EXTRA_qt_baisyccoin_qt_DEPENDENCIES) qt/$(am__dirstamp)
+	@rm -f qt/baisyccoin-qt$(EXEEXT)
+	$(AM_V_OBJCXXLD)$(qt_baisyccoin_qt_LINK) $(qt_baisyccoin_qt_OBJECTS) $(qt_baisyccoin_qt_LDADD) $(LIBS)
 qt/test/$(am__dirstamp):
 	@$(MKDIR_P) qt/test
 	@: > qt/test/$(am__dirstamp)
@@ -3175,9 +3175,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ganjacoin_cli-ganjacoin-cli.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ganjacoin_tx-ganjacoin-tx.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ganjacoind-ganjacoind.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baisyccoin_cli-baisyccoin-cli.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baisyccoin_tx-baisyccoin-tx.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baisyccoind-baisyccoind.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_cli_a-rpcclient.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-accumulatormap.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-accumulators.Po@am__quote@
@@ -3321,9 +3321,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libbitcoin_common_a-zerocoin.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libbitcoin_wallet_a-zerocoin.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libbitcoinconsensus_la-transaction.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_ganjacoin_qt-ganjacoin.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_ganjacoin_qt-macdockiconhandler.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_ganjacoin_qt-macnotificationhandler.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_baisyccoin_qt-baisyccoin.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_baisyccoin_qt-macdockiconhandler.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_baisyccoin_qt-macnotificationhandler.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-addressbookpage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-addresstablemodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-askpassphrasedialog.Po@am__quote@
@@ -3391,7 +3391,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_walletframe.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_walletmodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_walletview.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-multisenddialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-multisigdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-networkstyle.Po@am__quote@
@@ -3407,8 +3407,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-peertablemodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-platformstyle.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-privacydialog.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin_locale.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin_locale.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-qvalidatedlineedit.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-qvaluecombobox.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-receivecoinsdialog.Po@am__quote@
@@ -3432,7 +3432,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-walletmodeltransaction.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-walletview.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-winshutdownmonitor.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-zganjacoincontroldialog.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-zbaisyccoincontroldialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_xorn_qt-moc_paymentservertests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_xorn_qt-moc_uritests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_xorn_qt-paymentservertests.Po@am__quote@
@@ -6080,19 +6080,19 @@ qt/qt_libbitcoinqt_a-walletview.obj: qt/walletview.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-walletview.obj `if test -f 'qt/walletview.cpp'; then $(CYGPATH_W) 'qt/walletview.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/walletview.cpp'; fi`
 
-qt/qt_libbitcoinqt_a-zganjacoincontroldialog.o: qt/zganjacoincontroldialog.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-zganjacoincontroldialog.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-zganjacoincontroldialog.Tpo -c -o qt/qt_libbitcoinqt_a-zganjacoincontroldialog.o `test -f 'qt/zganjacoincontroldialog.cpp' || echo '$(srcdir)/'`qt/zganjacoincontroldialog.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-zganjacoincontroldialog.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-zganjacoincontroldialog.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/zganjacoincontroldialog.cpp' object='qt/qt_libbitcoinqt_a-zganjacoincontroldialog.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.o: qt/zbaisyccoincontroldialog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-zbaisyccoincontroldialog.Tpo -c -o qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.o `test -f 'qt/zbaisyccoincontroldialog.cpp' || echo '$(srcdir)/'`qt/zbaisyccoincontroldialog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-zbaisyccoincontroldialog.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-zbaisyccoincontroldialog.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/zbaisyccoincontroldialog.cpp' object='qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-zganjacoincontroldialog.o `test -f 'qt/zganjacoincontroldialog.cpp' || echo '$(srcdir)/'`qt/zganjacoincontroldialog.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.o `test -f 'qt/zbaisyccoincontroldialog.cpp' || echo '$(srcdir)/'`qt/zbaisyccoincontroldialog.cpp
 
-qt/qt_libbitcoinqt_a-zganjacoincontroldialog.obj: qt/zganjacoincontroldialog.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-zganjacoincontroldialog.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-zganjacoincontroldialog.Tpo -c -o qt/qt_libbitcoinqt_a-zganjacoincontroldialog.obj `if test -f 'qt/zganjacoincontroldialog.cpp'; then $(CYGPATH_W) 'qt/zganjacoincontroldialog.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/zganjacoincontroldialog.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-zganjacoincontroldialog.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-zganjacoincontroldialog.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/zganjacoincontroldialog.cpp' object='qt/qt_libbitcoinqt_a-zganjacoincontroldialog.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.obj: qt/zbaisyccoincontroldialog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-zbaisyccoincontroldialog.Tpo -c -o qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.obj `if test -f 'qt/zbaisyccoincontroldialog.cpp'; then $(CYGPATH_W) 'qt/zbaisyccoincontroldialog.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/zbaisyccoincontroldialog.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-zbaisyccoincontroldialog.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-zbaisyccoincontroldialog.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/zbaisyccoincontroldialog.cpp' object='qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-zganjacoincontroldialog.obj `if test -f 'qt/zganjacoincontroldialog.cpp'; then $(CYGPATH_W) 'qt/zganjacoincontroldialog.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/zganjacoincontroldialog.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-zbaisyccoincontroldialog.obj `if test -f 'qt/zbaisyccoincontroldialog.cpp'; then $(CYGPATH_W) 'qt/zbaisyccoincontroldialog.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/zbaisyccoincontroldialog.cpp'; fi`
 
 qt/qt_libbitcoinqt_a-moc_addressbookpage.o: qt/moc_addressbookpage.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_addressbookpage.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_addressbookpage.Tpo -c -o qt/qt_libbitcoinqt_a-moc_addressbookpage.o `test -f 'qt/moc_addressbookpage.cpp' || echo '$(srcdir)/'`qt/moc_addressbookpage.cpp
@@ -6794,19 +6794,19 @@ qt/qt_libbitcoinqt_a-moc_walletview.obj: qt/moc_walletview.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_walletview.obj `if test -f 'qt/moc_walletview.cpp'; then $(CYGPATH_W) 'qt/moc_walletview.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_walletview.cpp'; fi`
 
-qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.o: qt/moc_zganjacoincontroldialog.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.Tpo -c -o qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.o `test -f 'qt/moc_zganjacoincontroldialog.cpp' || echo '$(srcdir)/'`qt/moc_zganjacoincontroldialog.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_zganjacoincontroldialog.cpp' object='qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.o: qt/moc_zbaisyccoincontroldialog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.Tpo -c -o qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.o `test -f 'qt/moc_zbaisyccoincontroldialog.cpp' || echo '$(srcdir)/'`qt/moc_zbaisyccoincontroldialog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_zbaisyccoincontroldialog.cpp' object='qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.o `test -f 'qt/moc_zganjacoincontroldialog.cpp' || echo '$(srcdir)/'`qt/moc_zganjacoincontroldialog.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.o `test -f 'qt/moc_zbaisyccoincontroldialog.cpp' || echo '$(srcdir)/'`qt/moc_zbaisyccoincontroldialog.cpp
 
-qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.obj: qt/moc_zganjacoincontroldialog.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.Tpo -c -o qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.obj `if test -f 'qt/moc_zganjacoincontroldialog.cpp'; then $(CYGPATH_W) 'qt/moc_zganjacoincontroldialog.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_zganjacoincontroldialog.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_zganjacoincontroldialog.cpp' object='qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.obj: qt/moc_zbaisyccoincontroldialog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.Tpo -c -o qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.obj `if test -f 'qt/moc_zbaisyccoincontroldialog.cpp'; then $(CYGPATH_W) 'qt/moc_zbaisyccoincontroldialog.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_zbaisyccoincontroldialog.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_zbaisyccoincontroldialog.cpp' object='qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_zganjacoincontroldialog.obj `if test -f 'qt/moc_zganjacoincontroldialog.cpp'; then $(CYGPATH_W) 'qt/moc_zganjacoincontroldialog.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_zganjacoincontroldialog.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_zbaisyccoincontroldialog.obj `if test -f 'qt/moc_zbaisyccoincontroldialog.cpp'; then $(CYGPATH_W) 'qt/moc_zbaisyccoincontroldialog.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_zbaisyccoincontroldialog.cpp'; fi`
 
 qt/qt_libbitcoinqt_a-paymentrequest.pb.o: qt/paymentrequest.pb.cc
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-paymentrequest.pb.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-paymentrequest.pb.Tpo -c -o qt/qt_libbitcoinqt_a-paymentrequest.pb.o `test -f 'qt/paymentrequest.pb.cc' || echo '$(srcdir)/'`qt/paymentrequest.pb.cc
@@ -6822,33 +6822,33 @@ qt/qt_libbitcoinqt_a-paymentrequest.pb.obj: qt/paymentrequest.pb.cc
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-paymentrequest.pb.obj `if test -f 'qt/paymentrequest.pb.cc'; then $(CYGPATH_W) 'qt/paymentrequest.pb.cc'; else $(CYGPATH_W) '$(srcdir)/qt/paymentrequest.pb.cc'; fi`
 
-qt/qt_libbitcoinqt_a-qrc_ganjacoin.o: qt/qrc_ganjacoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_ganjacoin.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_ganjacoin.o `test -f 'qt/qrc_ganjacoin.cpp' || echo '$(srcdir)/'`qt/qrc_ganjacoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_ganjacoin.cpp' object='qt/qt_libbitcoinqt_a-qrc_ganjacoin.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libbitcoinqt_a-qrc_baisyccoin.o: qt/qrc_baisyccoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_baisyccoin.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_baisyccoin.o `test -f 'qt/qrc_baisyccoin.cpp' || echo '$(srcdir)/'`qt/qrc_baisyccoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_baisyccoin.cpp' object='qt/qt_libbitcoinqt_a-qrc_baisyccoin.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_ganjacoin.o `test -f 'qt/qrc_ganjacoin.cpp' || echo '$(srcdir)/'`qt/qrc_ganjacoin.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_baisyccoin.o `test -f 'qt/qrc_baisyccoin.cpp' || echo '$(srcdir)/'`qt/qrc_baisyccoin.cpp
 
-qt/qt_libbitcoinqt_a-qrc_ganjacoin.obj: qt/qrc_ganjacoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_ganjacoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_ganjacoin.obj `if test -f 'qt/qrc_ganjacoin.cpp'; then $(CYGPATH_W) 'qt/qrc_ganjacoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_ganjacoin.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_ganjacoin.cpp' object='qt/qt_libbitcoinqt_a-qrc_ganjacoin.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libbitcoinqt_a-qrc_baisyccoin.obj: qt/qrc_baisyccoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_baisyccoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_baisyccoin.obj `if test -f 'qt/qrc_baisyccoin.cpp'; then $(CYGPATH_W) 'qt/qrc_baisyccoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_baisyccoin.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_baisyccoin.cpp' object='qt/qt_libbitcoinqt_a-qrc_baisyccoin.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_ganjacoin.obj `if test -f 'qt/qrc_ganjacoin.cpp'; then $(CYGPATH_W) 'qt/qrc_ganjacoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_ganjacoin.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_baisyccoin.obj `if test -f 'qt/qrc_baisyccoin.cpp'; then $(CYGPATH_W) 'qt/qrc_baisyccoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_baisyccoin.cpp'; fi`
 
-qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.o: qt/qrc_ganjacoin_locale.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin_locale.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.o `test -f 'qt/qrc_ganjacoin_locale.cpp' || echo '$(srcdir)/'`qt/qrc_ganjacoin_locale.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin_locale.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin_locale.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_ganjacoin_locale.cpp' object='qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.o: qt/qrc_baisyccoin_locale.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin_locale.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.o `test -f 'qt/qrc_baisyccoin_locale.cpp' || echo '$(srcdir)/'`qt/qrc_baisyccoin_locale.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin_locale.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin_locale.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_baisyccoin_locale.cpp' object='qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.o `test -f 'qt/qrc_ganjacoin_locale.cpp' || echo '$(srcdir)/'`qt/qrc_ganjacoin_locale.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.o `test -f 'qt/qrc_baisyccoin_locale.cpp' || echo '$(srcdir)/'`qt/qrc_baisyccoin_locale.cpp
 
-qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.obj: qt/qrc_ganjacoin_locale.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin_locale.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.obj `if test -f 'qt/qrc_ganjacoin_locale.cpp'; then $(CYGPATH_W) 'qt/qrc_ganjacoin_locale.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_ganjacoin_locale.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin_locale.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_ganjacoin_locale.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_ganjacoin_locale.cpp' object='qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.obj: qt/qrc_baisyccoin_locale.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin_locale.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.obj `if test -f 'qt/qrc_baisyccoin_locale.cpp'; then $(CYGPATH_W) 'qt/qrc_baisyccoin_locale.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_baisyccoin_locale.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin_locale.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_baisyccoin_locale.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_baisyccoin_locale.cpp' object='qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_ganjacoin_locale.obj `if test -f 'qt/qrc_ganjacoin_locale.cpp'; then $(CYGPATH_W) 'qt/qrc_ganjacoin_locale.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_ganjacoin_locale.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_baisyccoin_locale.obj `if test -f 'qt/qrc_baisyccoin_locale.cpp'; then $(CYGPATH_W) 'qt/qrc_baisyccoin_locale.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_baisyccoin_locale.cpp'; fi`
 
 libbitcoinconsensus_la-allocators.lo: allocators.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libbitcoinconsensus_la-allocators.lo -MD -MP -MF $(DEPDIR)/libbitcoinconsensus_la-allocators.Tpo -c -o libbitcoinconsensus_la-allocators.lo `test -f 'allocators.cpp' || echo '$(srcdir)/'`allocators.cpp
@@ -6983,61 +6983,61 @@ compat/libbitcoinconsensus_la-glibcxx_compat.lo: compat/glibcxx_compat.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o compat/libbitcoinconsensus_la-glibcxx_compat.lo `test -f 'compat/glibcxx_compat.cpp' || echo '$(srcdir)/'`compat/glibcxx_compat.cpp
 
-ganjacoin_cli-ganjacoin-cli.o: ganjacoin-cli.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoin_cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ganjacoin_cli-ganjacoin-cli.o -MD -MP -MF $(DEPDIR)/ganjacoin_cli-ganjacoin-cli.Tpo -c -o ganjacoin_cli-ganjacoin-cli.o `test -f 'ganjacoin-cli.cpp' || echo '$(srcdir)/'`ganjacoin-cli.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ganjacoin_cli-ganjacoin-cli.Tpo $(DEPDIR)/ganjacoin_cli-ganjacoin-cli.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='ganjacoin-cli.cpp' object='ganjacoin_cli-ganjacoin-cli.o' libtool=no @AMDEPBACKSLASH@
+baisyccoin_cli-baisyccoin-cli.o: baisyccoin-cli.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoin_cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT baisyccoin_cli-baisyccoin-cli.o -MD -MP -MF $(DEPDIR)/baisyccoin_cli-baisyccoin-cli.Tpo -c -o baisyccoin_cli-baisyccoin-cli.o `test -f 'baisyccoin-cli.cpp' || echo '$(srcdir)/'`baisyccoin-cli.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/baisyccoin_cli-baisyccoin-cli.Tpo $(DEPDIR)/baisyccoin_cli-baisyccoin-cli.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='baisyccoin-cli.cpp' object='baisyccoin_cli-baisyccoin-cli.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoin_cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ganjacoin_cli-ganjacoin-cli.o `test -f 'ganjacoin-cli.cpp' || echo '$(srcdir)/'`ganjacoin-cli.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoin_cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o baisyccoin_cli-baisyccoin-cli.o `test -f 'baisyccoin-cli.cpp' || echo '$(srcdir)/'`baisyccoin-cli.cpp
 
-ganjacoin_cli-ganjacoin-cli.obj: ganjacoin-cli.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoin_cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ganjacoin_cli-ganjacoin-cli.obj -MD -MP -MF $(DEPDIR)/ganjacoin_cli-ganjacoin-cli.Tpo -c -o ganjacoin_cli-ganjacoin-cli.obj `if test -f 'ganjacoin-cli.cpp'; then $(CYGPATH_W) 'ganjacoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/ganjacoin-cli.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ganjacoin_cli-ganjacoin-cli.Tpo $(DEPDIR)/ganjacoin_cli-ganjacoin-cli.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='ganjacoin-cli.cpp' object='ganjacoin_cli-ganjacoin-cli.obj' libtool=no @AMDEPBACKSLASH@
+baisyccoin_cli-baisyccoin-cli.obj: baisyccoin-cli.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoin_cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT baisyccoin_cli-baisyccoin-cli.obj -MD -MP -MF $(DEPDIR)/baisyccoin_cli-baisyccoin-cli.Tpo -c -o baisyccoin_cli-baisyccoin-cli.obj `if test -f 'baisyccoin-cli.cpp'; then $(CYGPATH_W) 'baisyccoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/baisyccoin-cli.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/baisyccoin_cli-baisyccoin-cli.Tpo $(DEPDIR)/baisyccoin_cli-baisyccoin-cli.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='baisyccoin-cli.cpp' object='baisyccoin_cli-baisyccoin-cli.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoin_cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ganjacoin_cli-ganjacoin-cli.obj `if test -f 'ganjacoin-cli.cpp'; then $(CYGPATH_W) 'ganjacoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/ganjacoin-cli.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoin_cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o baisyccoin_cli-baisyccoin-cli.obj `if test -f 'baisyccoin-cli.cpp'; then $(CYGPATH_W) 'baisyccoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/baisyccoin-cli.cpp'; fi`
 
-ganjacoin_tx-ganjacoin-tx.o: ganjacoin-tx.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoin_tx_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ganjacoin_tx-ganjacoin-tx.o -MD -MP -MF $(DEPDIR)/ganjacoin_tx-ganjacoin-tx.Tpo -c -o ganjacoin_tx-ganjacoin-tx.o `test -f 'ganjacoin-tx.cpp' || echo '$(srcdir)/'`ganjacoin-tx.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ganjacoin_tx-ganjacoin-tx.Tpo $(DEPDIR)/ganjacoin_tx-ganjacoin-tx.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='ganjacoin-tx.cpp' object='ganjacoin_tx-ganjacoin-tx.o' libtool=no @AMDEPBACKSLASH@
+baisyccoin_tx-baisyccoin-tx.o: baisyccoin-tx.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoin_tx_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT baisyccoin_tx-baisyccoin-tx.o -MD -MP -MF $(DEPDIR)/baisyccoin_tx-baisyccoin-tx.Tpo -c -o baisyccoin_tx-baisyccoin-tx.o `test -f 'baisyccoin-tx.cpp' || echo '$(srcdir)/'`baisyccoin-tx.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/baisyccoin_tx-baisyccoin-tx.Tpo $(DEPDIR)/baisyccoin_tx-baisyccoin-tx.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='baisyccoin-tx.cpp' object='baisyccoin_tx-baisyccoin-tx.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoin_tx_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ganjacoin_tx-ganjacoin-tx.o `test -f 'ganjacoin-tx.cpp' || echo '$(srcdir)/'`ganjacoin-tx.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoin_tx_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o baisyccoin_tx-baisyccoin-tx.o `test -f 'baisyccoin-tx.cpp' || echo '$(srcdir)/'`baisyccoin-tx.cpp
 
-ganjacoin_tx-ganjacoin-tx.obj: ganjacoin-tx.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoin_tx_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ganjacoin_tx-ganjacoin-tx.obj -MD -MP -MF $(DEPDIR)/ganjacoin_tx-ganjacoin-tx.Tpo -c -o ganjacoin_tx-ganjacoin-tx.obj `if test -f 'ganjacoin-tx.cpp'; then $(CYGPATH_W) 'ganjacoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/ganjacoin-tx.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ganjacoin_tx-ganjacoin-tx.Tpo $(DEPDIR)/ganjacoin_tx-ganjacoin-tx.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='ganjacoin-tx.cpp' object='ganjacoin_tx-ganjacoin-tx.obj' libtool=no @AMDEPBACKSLASH@
+baisyccoin_tx-baisyccoin-tx.obj: baisyccoin-tx.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoin_tx_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT baisyccoin_tx-baisyccoin-tx.obj -MD -MP -MF $(DEPDIR)/baisyccoin_tx-baisyccoin-tx.Tpo -c -o baisyccoin_tx-baisyccoin-tx.obj `if test -f 'baisyccoin-tx.cpp'; then $(CYGPATH_W) 'baisyccoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/baisyccoin-tx.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/baisyccoin_tx-baisyccoin-tx.Tpo $(DEPDIR)/baisyccoin_tx-baisyccoin-tx.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='baisyccoin-tx.cpp' object='baisyccoin_tx-baisyccoin-tx.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoin_tx_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ganjacoin_tx-ganjacoin-tx.obj `if test -f 'ganjacoin-tx.cpp'; then $(CYGPATH_W) 'ganjacoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/ganjacoin-tx.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoin_tx_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o baisyccoin_tx-baisyccoin-tx.obj `if test -f 'baisyccoin-tx.cpp'; then $(CYGPATH_W) 'baisyccoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/baisyccoin-tx.cpp'; fi`
 
-ganjacoind-ganjacoind.o: ganjacoind.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoind_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ganjacoind-ganjacoind.o -MD -MP -MF $(DEPDIR)/ganjacoind-ganjacoind.Tpo -c -o ganjacoind-ganjacoind.o `test -f 'ganjacoind.cpp' || echo '$(srcdir)/'`ganjacoind.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ganjacoind-ganjacoind.Tpo $(DEPDIR)/ganjacoind-ganjacoind.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='ganjacoind.cpp' object='ganjacoind-ganjacoind.o' libtool=no @AMDEPBACKSLASH@
+baisyccoind-baisyccoind.o: baisyccoind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoind_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT baisyccoind-baisyccoind.o -MD -MP -MF $(DEPDIR)/baisyccoind-baisyccoind.Tpo -c -o baisyccoind-baisyccoind.o `test -f 'baisyccoind.cpp' || echo '$(srcdir)/'`baisyccoind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/baisyccoind-baisyccoind.Tpo $(DEPDIR)/baisyccoind-baisyccoind.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='baisyccoind.cpp' object='baisyccoind-baisyccoind.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoind_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ganjacoind-ganjacoind.o `test -f 'ganjacoind.cpp' || echo '$(srcdir)/'`ganjacoind.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoind_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o baisyccoind-baisyccoind.o `test -f 'baisyccoind.cpp' || echo '$(srcdir)/'`baisyccoind.cpp
 
-ganjacoind-ganjacoind.obj: ganjacoind.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoind_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ganjacoind-ganjacoind.obj -MD -MP -MF $(DEPDIR)/ganjacoind-ganjacoind.Tpo -c -o ganjacoind-ganjacoind.obj `if test -f 'ganjacoind.cpp'; then $(CYGPATH_W) 'ganjacoind.cpp'; else $(CYGPATH_W) '$(srcdir)/ganjacoind.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ganjacoind-ganjacoind.Tpo $(DEPDIR)/ganjacoind-ganjacoind.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='ganjacoind.cpp' object='ganjacoind-ganjacoind.obj' libtool=no @AMDEPBACKSLASH@
+baisyccoind-baisyccoind.obj: baisyccoind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoind_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT baisyccoind-baisyccoind.obj -MD -MP -MF $(DEPDIR)/baisyccoind-baisyccoind.Tpo -c -o baisyccoind-baisyccoind.obj `if test -f 'baisyccoind.cpp'; then $(CYGPATH_W) 'baisyccoind.cpp'; else $(CYGPATH_W) '$(srcdir)/baisyccoind.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/baisyccoind-baisyccoind.Tpo $(DEPDIR)/baisyccoind-baisyccoind.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='baisyccoind.cpp' object='baisyccoind-baisyccoind.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ganjacoind_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ganjacoind-ganjacoind.obj `if test -f 'ganjacoind.cpp'; then $(CYGPATH_W) 'ganjacoind.cpp'; else $(CYGPATH_W) '$(srcdir)/ganjacoind.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(baisyccoind_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o baisyccoind-baisyccoind.obj `if test -f 'baisyccoind.cpp'; then $(CYGPATH_W) 'baisyccoind.cpp'; else $(CYGPATH_W) '$(srcdir)/baisyccoind.cpp'; fi`
 
-qt/qt_ganjacoin_qt-ganjacoin.o: qt/ganjacoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_ganjacoin_qt-ganjacoin.o -MD -MP -MF qt/$(DEPDIR)/qt_ganjacoin_qt-ganjacoin.Tpo -c -o qt/qt_ganjacoin_qt-ganjacoin.o `test -f 'qt/ganjacoin.cpp' || echo '$(srcdir)/'`qt/ganjacoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_ganjacoin_qt-ganjacoin.Tpo qt/$(DEPDIR)/qt_ganjacoin_qt-ganjacoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/ganjacoin.cpp' object='qt/qt_ganjacoin_qt-ganjacoin.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_baisyccoin_qt-baisyccoin.o: qt/baisyccoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_baisyccoin_qt-baisyccoin.o -MD -MP -MF qt/$(DEPDIR)/qt_baisyccoin_qt-baisyccoin.Tpo -c -o qt/qt_baisyccoin_qt-baisyccoin.o `test -f 'qt/baisyccoin.cpp' || echo '$(srcdir)/'`qt/baisyccoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_baisyccoin_qt-baisyccoin.Tpo qt/$(DEPDIR)/qt_baisyccoin_qt-baisyccoin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/baisyccoin.cpp' object='qt/qt_baisyccoin_qt-baisyccoin.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_ganjacoin_qt-ganjacoin.o `test -f 'qt/ganjacoin.cpp' || echo '$(srcdir)/'`qt/ganjacoin.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_baisyccoin_qt-baisyccoin.o `test -f 'qt/baisyccoin.cpp' || echo '$(srcdir)/'`qt/baisyccoin.cpp
 
-qt/qt_ganjacoin_qt-ganjacoin.obj: qt/ganjacoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_ganjacoin_qt-ganjacoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_ganjacoin_qt-ganjacoin.Tpo -c -o qt/qt_ganjacoin_qt-ganjacoin.obj `if test -f 'qt/ganjacoin.cpp'; then $(CYGPATH_W) 'qt/ganjacoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/ganjacoin.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_ganjacoin_qt-ganjacoin.Tpo qt/$(DEPDIR)/qt_ganjacoin_qt-ganjacoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/ganjacoin.cpp' object='qt/qt_ganjacoin_qt-ganjacoin.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_baisyccoin_qt-baisyccoin.obj: qt/baisyccoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_baisyccoin_qt-baisyccoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_baisyccoin_qt-baisyccoin.Tpo -c -o qt/qt_baisyccoin_qt-baisyccoin.obj `if test -f 'qt/baisyccoin.cpp'; then $(CYGPATH_W) 'qt/baisyccoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/baisyccoin.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_baisyccoin_qt-baisyccoin.Tpo qt/$(DEPDIR)/qt_baisyccoin_qt-baisyccoin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/baisyccoin.cpp' object='qt/qt_baisyccoin_qt-baisyccoin.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_ganjacoin_qt-ganjacoin.obj `if test -f 'qt/ganjacoin.cpp'; then $(CYGPATH_W) 'qt/ganjacoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/ganjacoin.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_baisyccoin_qt-baisyccoin.obj `if test -f 'qt/baisyccoin.cpp'; then $(CYGPATH_W) 'qt/baisyccoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/baisyccoin.cpp'; fi`
 
 qt/test/qt_test_test_xorn_qt-test_main.o: qt/test/test_main.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_xorn_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_xorn_qt-test_main.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_xorn_qt-test_main.Tpo -c -o qt/test/qt_test_test_xorn_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
@@ -7765,33 +7765,33 @@ test/test_test_xorn-rpc_wallet_tests.obj: test/rpc_wallet_tests.cpp
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(LTOBJCXXCOMPILE) -c -o $@ $<
 
-qt/qt_ganjacoin_qt-macdockiconhandler.o: qt/macdockiconhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_ganjacoin_qt-macdockiconhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_ganjacoin_qt-macdockiconhandler.Tpo -c -o qt/qt_ganjacoin_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_ganjacoin_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_ganjacoin_qt-macdockiconhandler.Po
-@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_ganjacoin_qt-macdockiconhandler.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_baisyccoin_qt-macdockiconhandler.o: qt/macdockiconhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_baisyccoin_qt-macdockiconhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_baisyccoin_qt-macdockiconhandler.Tpo -c -o qt/qt_baisyccoin_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_baisyccoin_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_baisyccoin_qt-macdockiconhandler.Po
+@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_baisyccoin_qt-macdockiconhandler.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_ganjacoin_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
+@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_baisyccoin_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
 
-qt/qt_ganjacoin_qt-macdockiconhandler.obj: qt/macdockiconhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_ganjacoin_qt-macdockiconhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_ganjacoin_qt-macdockiconhandler.Tpo -c -o qt/qt_ganjacoin_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
-@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_ganjacoin_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_ganjacoin_qt-macdockiconhandler.Po
-@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_ganjacoin_qt-macdockiconhandler.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_baisyccoin_qt-macdockiconhandler.obj: qt/macdockiconhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_baisyccoin_qt-macdockiconhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_baisyccoin_qt-macdockiconhandler.Tpo -c -o qt/qt_baisyccoin_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
+@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_baisyccoin_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_baisyccoin_qt-macdockiconhandler.Po
+@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_baisyccoin_qt-macdockiconhandler.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_ganjacoin_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
+@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_baisyccoin_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
 
-qt/qt_ganjacoin_qt-macnotificationhandler.o: qt/macnotificationhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_ganjacoin_qt-macnotificationhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_ganjacoin_qt-macnotificationhandler.Tpo -c -o qt/qt_ganjacoin_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_ganjacoin_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_ganjacoin_qt-macnotificationhandler.Po
-@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_ganjacoin_qt-macnotificationhandler.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_baisyccoin_qt-macnotificationhandler.o: qt/macnotificationhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_baisyccoin_qt-macnotificationhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_baisyccoin_qt-macnotificationhandler.Tpo -c -o qt/qt_baisyccoin_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_baisyccoin_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_baisyccoin_qt-macnotificationhandler.Po
+@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_baisyccoin_qt-macnotificationhandler.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_ganjacoin_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
+@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_baisyccoin_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
 
-qt/qt_ganjacoin_qt-macnotificationhandler.obj: qt/macnotificationhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_ganjacoin_qt-macnotificationhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_ganjacoin_qt-macnotificationhandler.Tpo -c -o qt/qt_ganjacoin_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
-@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_ganjacoin_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_ganjacoin_qt-macnotificationhandler.Po
-@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_ganjacoin_qt-macnotificationhandler.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_baisyccoin_qt-macnotificationhandler.obj: qt/macnotificationhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_baisyccoin_qt-macnotificationhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_baisyccoin_qt-macnotificationhandler.Tpo -c -o qt/qt_baisyccoin_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
+@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_baisyccoin_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_baisyccoin_qt-macnotificationhandler.Po
+@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_baisyccoin_qt-macnotificationhandler.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_ganjacoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_ganjacoin_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
+@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_baisyccoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_baisyccoin_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -8391,7 +8391,7 @@ clean-local:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 @ENABLE_QT_TRUE@$(QT_MOC): $(QT_FORMS_H)
-@ENABLE_QT_TRUE@$(qt_libbitcoinqt_a_OBJECTS) $(qt_ganjacoin_qt_OBJECTS) : | $(QT_MOC)
+@ENABLE_QT_TRUE@$(qt_libbitcoinqt_a_OBJECTS) $(qt_baisyccoin_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
@@ -8400,29 +8400,29 @@ clean-local:
 
 @ENABLE_QT_TRUE@.SECONDARY: $(QT_QM)
 
-@ENABLE_QT_TRUE@qt/ganjacoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
+@ENABLE_QT_TRUE@qt/baisyccoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
 @ENABLE_QT_TRUE@	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 @ENABLE_QT_TRUE@	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-@ENABLE_QT_TRUE@translate: qt/ganjacoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+@ENABLE_QT_TRUE@translate: qt/baisyccoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 @ENABLE_QT_TRUE@	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-@ENABLE_QT_TRUE@	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/ganjacoin_en.ts
+@ENABLE_QT_TRUE@	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/baisyccoin_en.ts
 
 @ENABLE_QT_TRUE@$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 @ENABLE_QT_TRUE@	@test -f $(RCC)
 @ENABLE_QT_TRUE@	@test -f $(@D)/$(<F) || cp -f $< $(@D)
-@ENABLE_QT_TRUE@	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name ganjacoin_locale $(@D)/$(<F) | \
+@ENABLE_QT_TRUE@	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name baisyccoin_locale $(@D)/$(<F) | \
 @ENABLE_QT_TRUE@	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 @ENABLE_QT_TRUE@$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 @ENABLE_QT_TRUE@	@test -f $(RCC)
-@ENABLE_QT_TRUE@	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name ganjacoin $< | \
+@ENABLE_QT_TRUE@	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name baisyccoin $< | \
 @ENABLE_QT_TRUE@	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-@ENABLE_QT_TRUE@ganjacoin_qt_clean: FORCE
-@ENABLE_QT_TRUE@	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_ganjacoin_qt_OBJECTS) qt/ganjacoin-qt$(EXEEXT) $(LIBBITCOINQT)
+@ENABLE_QT_TRUE@baisyccoin_qt_clean: FORCE
+@ENABLE_QT_TRUE@	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_baisyccoin_qt_OBJECTS) qt/baisyccoin-qt$(EXEEXT) $(LIBBITCOINQT)
 
-@ENABLE_QT_TRUE@ganjacoin_qt : qt/ganjacoin-qt$(EXEEXT)
+@ENABLE_QT_TRUE@baisyccoin_qt : qt/baisyccoin-qt$(EXEEXT)
 
 @ENABLE_QT_TRUE@ui_%.h: %.ui
 @ENABLE_QT_TRUE@	@test -f $(UIC)
