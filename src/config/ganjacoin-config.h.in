@@ -1,8 +1,8 @@
-/* src/config/ganjacoin-config.h.in.  Generated from configure.ac by autoheader.  */
+/* src/config/baisyccoin-config.h.in.  Generated from configure.ac by autoheader.  */
 
-#ifndef ganjacoin_CONFIG_H
+#ifndef baisyccoin_CONFIG_H
 
-#define ganjacoin_CONFIG_H
+#define baisyccoin_CONFIG_H
 
 /* Define if building universal (internal helper macro) */
 #undef AC_APPLE_UNIVERSAL_BUILD
@@ -339,4 +339,4 @@
 /* Define for large files, on AIX-style hosts. */
 #undef _LARGE_FILES
 
-#endif //ganjacoin_CONFIG_H
+#endif //baisyccoin_CONFIG_H
