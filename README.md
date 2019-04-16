@@ -1,10 +1,10 @@
-<b><h2>Ganjacoin-REBORN</h2></b><br></br>
+<b><h2>Baisyccoin</h2></b><br></br>
 [![Build Status](https://travis-ci.org/legends420/awesome-badges.svg?branch=master)](https://GitHub.com/Legends420/GanjaCoin-zREBORN)
 
-Ganjacoin is a PoS / Master Node hybrid Crypto-Currency.  Ganja Coin’s mission and aim is the integration of its utility into real world usage. Purchase Cannabis buds from dispensaries & coffee shops, buy growing guides, paraphernalia and seeds online by using Ganja Coin.
+Baisyccoin is a PoS / Master Node hybrid Crypto-Currency.  Baisyc Coin’s mission and aim is the integration of its utility into real world usage. Purchase Cannabis buds from dispensaries & coffee shops, buy growing guides, paraphernalia and seeds online by using Ganja Coin.
 <br>
 <br>
-MasterNode cost <b>30,000 MRJA</b>
+MasterNode cost <b>30,000 BSYC</b>
 <br>
 Algo:Quark
 <br>
