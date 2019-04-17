@@ -116,10 +116,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xa4;
-        pchMessageStart[1] = 0x21;
-        pchMessageStart[2] = 0xa9;
-        pchMessageStart[3] = 0xbd;
+        pchMessageStart[0] = 0xa5;
+        pchMessageStart[1] = 0x23;
+        pchMessageStart[2] = 0xaa;
+        pchMessageStart[3] = 0xbe;
         vAlertPubKey = ParseHex("0459552ca45874511e7c6f130fa742613f94a4ca914c429b6e9695a8fb3c61e7c44f0e7adeb1b37ab190aee86ca0577a355e964fad67d1e654de41a48c666dd01e");
         nDefaultPort = 12311;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // XORN starting difficulty is 1 / 2^12
