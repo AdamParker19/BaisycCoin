@@ -121,9 +121,9 @@ public:
         pchMessageStart[2] = 0xaa;
         pchMessageStart[3] = 0xbe;
         vAlertPubKey = ParseHex("0459552ca45874511e7c6f130fa742613f94a4ca914c429b6e9695a8fb3c61e7c44f0e7adeb1b37ab190aee86ca0577a355e964fad67d1e654de41a48c666dd01e");
-        nDefaultPort = 12311;
+        nDefaultPort = 64758;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // XORN starting difficulty is 1 / 2^12
-        nSubsidyHalvingInterval = 999999;
+        nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
@@ -131,12 +131,12 @@ public:
         nMinerThreads = 1;
         nTargetTimespan = 1 * 60; // XORN: Retargeting
         nTargetSpacing = 1 * 60;  // XORN: 1 minute
-        nMaturity = 10;
+        nMaturity = 50;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 33000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 250;
+        nLastPOWBlock = 90;
         nModifierUpdateBlock = 9999999;
         nZerocoinStartHeight = 251;
         nAccumulatorStartHeight = 1;
@@ -166,8 +166,8 @@ public:
         assert(hashGenesisBlock == uint256("0x000003ad8e97e6074aa1035d9ba0a965b4de2eb552e37d7d2b396078b4501f28"));
         assert(genesis.hashMerkleRoot == uint256("0xb4a6fbb6ee3709b536b90fd3dfdaf9ea2c27567ce79400e991a453ea9b1f75a2"));
 
-        vSeeds.push_back(CDNSSeedData("192.168.42.221", "192.168.42.222"));   // Single node address
- 
+        vSeeds.push_back(CDNSSeedData("192.168.42.222", "192.168.42.222"));   // Single node address
+        vSeeds.push_back(CDNSSeedData("192.168.42.221", "192.168.42.221"));   // Single node address
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 25);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 75);
